@@ -1,0 +1,52 @@
+<div layout="column" layout-align="start stretch" class="page" layout-nowrap>
+  <div class="toolbar" layout="row" layout-align="start center">
+    <img class="logo" src="dist/image/eclimax.png">
+    <div flex class="menu" layout="row" layout-align="end end">
+      <md-nav-bar
+      
+        md-selected-nav-item="currentNavItem"
+        nav-bar-aria-label="navigation links">
+        <md-nav-item md-nav-click="goto('page1')" name="page1">
+          Page One
+        </md-nav-item>
+        <md-nav-item md-nav-click="goto('page2')" name="page2">
+          Page Two
+        </md-nav-item>
+        <md-nav-item md-nav-click="goto('page3')" name="page3">
+          Page Three
+        </md-nav-item>
+      </md-nav-bar>
+    </div>
+
+
+
+  </div>
+  <md-content>
+    teste
+  </md-content>
+</div>
+
+<style type="text/css">
+  html, body{
+    height: 100%;
+  }
+
+  .page{
+    background-color: #ccc;
+    height: 100%;
+  }
+
+  .page .logo{
+    height: 80px;
+  }
+
+  .page .toolbar .menu{
+    height: 100%;
+  }
+
+  .page .toolbar{
+    height: 100px;
+    background-color: #fff;
+    padding: 0 20px 0 20px;
+  }
+</style>
