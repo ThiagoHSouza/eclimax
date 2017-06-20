@@ -8,6 +8,10 @@ angular.module('eclimax', [
   'ngMessages',
   'ngMaterial'
 ]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+config(['$locationProvider', '$routeProvider', '$mdThemingProvider', function($locationProvider, $routeProvider, $mdThemingProvider) {
   $routeProvider.otherwise({redirectTo: '/'});
+
+  $mdThemingProvider.theme('default')
+    .primaryPalette('pink')
+    .accentPalette('blue');
 }]);

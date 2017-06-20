@@ -3,30 +3,34 @@
     <img class="logo" src="dist/image/eclimax.png">
     <div flex class="menu" layout="row" layout-align="end end">
       <md-nav-bar
-      
-        md-selected-nav-item="currentNavItem"
-        nav-bar-aria-label="navigation links">
-        <md-nav-item md-nav-click="goto('page1')" name="page1">
-          Page One
+
+        md-selected-nav-item="currentNavItem">
+
+        <md-nav-item class="md-primary" md-nav-sref="{{itemMenu.menu}}" name="{{itemMenu.menu}}" 
+          ng-repeat="itemMenu in listaSecao">
+          {{itemMenu.title}}
         </md-nav-item>
-        <md-nav-item md-nav-click="goto('page2')" name="page2">
-          Page Two
-        </md-nav-item>
-        <md-nav-item md-nav-click="goto('page3')" name="page3">
-          Page Three
-        </md-nav-item>
+
       </md-nav-bar>
     </div>
-
-
-
   </div>
   <md-content>
-    teste
+    <div layout="column" class="secao">
+        <div ng-style="{'background-color': secao.color}" ng-repeat="secao in listaSecao">
+          {{secao.title}}
+
+        </div>
+
+    </div>
+
+   
+    
   </md-content>
 </div>
 
 <style type="text/css">
+
+
   html, body{
     height: 100%;
   }
@@ -44,9 +48,15 @@
     height: 100%;
   }
 
+
   .page .toolbar{
     height: 100px;
     background-color: #fff;
     padding: 0 20px 0 20px;
   }
+
+  .page .secao>div{
+    min-height: 500px;
+  }
+
 </style>
