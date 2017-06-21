@@ -2,16 +2,43 @@
 
 // Declare app level module which depends on views, and components
 angular.module('eclimax', [
-  'ngRoute',
+  'ui.router',
   'ngAnimate',
   'ngAria',
   'ngMessages',
-  'ngMaterial'
+  'ngMaterial',
+  'anim-in-out'
 ]).
-config(['$locationProvider', '$routeProvider', '$mdThemingProvider', function($locationProvider, $routeProvider, $mdThemingProvider) {
-  $routeProvider.otherwise({redirectTo: '/'});
+config([ '$mdThemingProvider', '$stateProvider',  function($mdThemingProvider, $stateProvider) {
+	$stateProvider
+	.state('template', {
+		url:'/',    	
+    	templateUrl: 'template/template.html',
+    	controller: 'templateCtrl',
+    	controllerAs: 'temCtrl'
+	})
 
-  $mdThemingProvider.theme('default')
-    .primaryPalette('pink')
-    .accentPalette('blue');
+	.state('template.home', {
+		url: '^/home',
+		templateUrl: 'template/home/home.html',
+		controller: 'homeCtrl',
+		controllerAs: 'homCtrl'
+	})
+
+	.state('template.qualidade', {
+		url: '^/qualidade',
+		templateUrl: 'template/qualidade/qualidade.html',
+		controller: 'qualidadeCtrl',
+		controllerAs: 'quaCtrl'
+	})
+	
+
+  
+
+	$mdThemingProvider.theme('default')
+	.primaryPalette('pink')
+	.accentPalette('blue');
 }]);
+
+
+

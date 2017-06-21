@@ -14,28 +14,33 @@
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+  <link rel="stylesheet" href="bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css">
 </head>
 </head>
 <body>
 
-  <div ng-view></div>
+  <div ui-view style="height: 100%"></div>
 
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 
   <script src="bower_components/angular-animate/angular-animate.min.js"></script>
   <script src="bower_components/angular-aria/angular-aria.min.js"></script>
   <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-ui-router-anim-in-out/anim-in-out.js"></script>
 
 
 
 
   <script src="app.js"></script>
-  <script src="home/home.js"></script>
+  <script src="template/template.js"></script>
+  
+  <script src="template/home/home.js"></script>
+  <script src="template/qualidade/qualidade.js"></script>
 </body>
 </html>

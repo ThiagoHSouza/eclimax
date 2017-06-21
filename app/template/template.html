@@ -1,28 +1,34 @@
-<div layout="column" layout-align="start stretch" class="page" layout-nowrap>
+<div layout="column" flex="none" layout-align="start stretch" class="page">
   <div class="toolbar" layout="row" layout-align="start center">
     <img class="logo" src="dist/image/eclimax.png">
     <div flex class="menu" layout="row" layout-align="end end">
       <md-nav-bar
+        
+        md-selected-nav-item="temCtrl.currentMenuItem">
 
-        md-selected-nav-item="currentNavItem">
-
-        <md-nav-item class="md-primary" md-nav-sref="{{itemMenu.menu}}" name="{{itemMenu.menu}}" 
-          ng-repeat="itemMenu in listaSecao">
+        <md-nav-item
+          ng-click="temCtrl.toggleMenu(itemMenu)" 
+          md-nav-sref="{{itemMenu.menu}}" 
+          class="md-primary" md-nav-sref="{{itemMenu.menu}}" 
+          name="{{itemMenu.menu}}" 
+          ng-repeat="itemMenu in temCtrl.listaSecao">
           {{itemMenu.title}}
         </md-nav-item>
+
+
 
       </md-nav-bar>
     </div>
   </div>
-  <md-content>
-    <div layout="column" class="secao">
+  <md-content layout="column" style="height: 100%">
+    <!-- <div layout="column" class="secao">
         <div ng-style="{'background-color': secao.color}" ng-repeat="secao in listaSecao">
           {{secao.title}}
 
         </div>
 
-    </div>
-
+    </div> -->
+    <div ui-view style="height: 100%"  class="anim-in-out anim-slide-right" data-anim-sync="true" data-anim-speed="1000"></div>
    
     
   </md-content>
@@ -38,6 +44,8 @@
   .page{
     background-color: #ccc;
     height: 100%;
+    position: relative;
+    bottom: 0;
   }
 
   .page .logo{
